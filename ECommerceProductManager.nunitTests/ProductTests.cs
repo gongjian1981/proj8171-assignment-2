@@ -8,7 +8,7 @@ namespace ECommerceProductManager.nunitTests
 {
     internal class ProductTests
     {
-        // Test ProductID boundaries
+        // Test ProductID boundaries - Min
         [Test]
         public void SetProductID_Min_ShouldBeValid()
         {
@@ -17,6 +17,8 @@ namespace ECommerceProductManager.nunitTests
             //Assert that the expected results have occurred
             Assert.That(product.ProductID, Is.EqualTo(1));
         }
+
+        // Test ProductID boundaries - Mid
 
         [Test]
         public void SetProductID_Mid_ShouldBeValid()
@@ -27,6 +29,8 @@ namespace ECommerceProductManager.nunitTests
             Assert.That(product.ProductID, Is.EqualTo(5000));
         }
 
+        // Test ProductID boundaries - Max
+
         [Test]
         public void SetProductID_Max_ShouldBeValid()
         {
@@ -35,7 +39,7 @@ namespace ECommerceProductManager.nunitTests
             //Assert that the expected results have occurred
             Assert.That(product.ProductID, Is.EqualTo(10000));
         }
-        // Test ProductName
+        // Test ProductName should be valid
         [Test]
         public void SetProductName_Test1_ShouldBeValid()
         {
@@ -44,7 +48,7 @@ namespace ECommerceProductManager.nunitTests
             //Assert that the expected results have occurred
             Assert.That(product.ProductName, Is.EqualTo("Lamp"));
         }
-
+        // Test2 ProductName should be valid
         [Test]
         public void SetProductName_Test2_ShouldBeValid()
         {
@@ -53,6 +57,8 @@ namespace ECommerceProductManager.nunitTests
             //Assert that the expected results have occurred
             Assert.That(product.ProductName, Is.EqualTo("Shampoo"));
         }
+
+        // Test3 ProductName should be valid
 
         [Test]
         public void SetProductName_Test3_ShouldBeValid()
@@ -63,7 +69,7 @@ namespace ECommerceProductManager.nunitTests
             Assert.That(product.ProductName, Is.EqualTo("Television"));
         }
 
-        // Test Price boundaries
+        // Test Price boundaries - Min
         [Test]
         public void SetPrice_Min_ShouldBeValid()
         {
@@ -73,6 +79,7 @@ namespace ECommerceProductManager.nunitTests
             Assert.That(product.Price, Is.EqualTo(1.0m));
         }
 
+        // Test Price boundaries - Mid
         [Test]
         public void SetPrice_Mid_ShouldBeValid()
         {
@@ -82,6 +89,7 @@ namespace ECommerceProductManager.nunitTests
             Assert.That(product.Price, Is.EqualTo(5000.0m));
         }
 
+        // Test Price boundaries - Max
         [Test]
         public void SetPrice_Max_ShouldBeValid()
         {
@@ -91,7 +99,7 @@ namespace ECommerceProductManager.nunitTests
             Assert.That(product.Price, Is.EqualTo(5000.0m));
         }
 
-        // Test Stock boundaries
+        // Test Stock boundaries - Min
         [Test]
         public void SetStock_Min_ShouldBeValid()
         {
@@ -100,7 +108,7 @@ namespace ECommerceProductManager.nunitTests
             //Assert that the expected results have occurred
             Assert.That(product.Stock, Is.EqualTo(1));
         }
-
+        // Test Stock boundaries - Mid
         [Test]
         public void SetStock_Mid_ShouldBeValid()
         {
@@ -109,6 +117,8 @@ namespace ECommerceProductManager.nunitTests
             //Assert that the expected results have occurred
             Assert.That(product.Stock, Is.EqualTo(50000));
         }
+
+        // Test Stock boundaries - Max
 
         [Test]
         public void SetStock_Max_ShouldBeValid()
@@ -119,7 +129,7 @@ namespace ECommerceProductManager.nunitTests
             Assert.That(product.Stock, Is.EqualTo(100000));
         }
 
-        // Test IncreaseStock functionality
+        // Test IncreaseStock functionality by 100
         [Test]
         public void IncreaseStock_By100_ShouldIncrease()
         {
@@ -131,6 +141,7 @@ namespace ECommerceProductManager.nunitTests
             Assert.That(product.Stock, Is.EqualTo(150));
         }
 
+        // Test IncreaseStock functionality by 0
         [Test]
         public void IncreaseStock_By0_ShouldNotChange()
         {
@@ -142,6 +153,7 @@ namespace ECommerceProductManager.nunitTests
             Assert.That(product.Stock, Is.EqualTo(999));
         }
 
+        // Test IncreaseStock functionality by 99999
         [Test]
         public void IncreaseStock_ToMax_ShouldBeValid()
         {
@@ -153,7 +165,7 @@ namespace ECommerceProductManager.nunitTests
             Assert.That(product.Stock, Is.EqualTo(100000));
         }
 
-        // Test DecreaseStock functionality
+        // Test DecreaseStock functionality by 200
         [Test]
         public void DecreaseStock_By200_ShouldDecrease()
         {
@@ -165,6 +177,7 @@ namespace ECommerceProductManager.nunitTests
             Assert.That(product.Stock, Is.EqualTo(550));
         }
 
+        // Test DecreaseStock functionality by 0
         [Test]
         public void DecreaseStock_By0_ShouldNotChange()
         {
@@ -176,6 +189,7 @@ namespace ECommerceProductManager.nunitTests
             Assert.That(product.Stock, Is.EqualTo(777));
         }
 
+        // Test DecreaseStock functionality by 1111
         [Test]
         public void DecreaseStock_ToMin_ShouldBeValid()
         {
